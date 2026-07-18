@@ -22,6 +22,19 @@ app.get("/workouts", async (req, res) => {
   }
 })
 
+app.get("/workouts/:id",async (req,res)=> {
+  try {
+    const result = await pool.query(
+      'SELECT * FROM "Workout" WHERE id = $1 ',[req.params.id]
+    )
+    if (!result.rows[0]) res.status(404).json({error:"error"})
+    res.json(result.rows[0])
+  } catch (err){
+    console.error(err)
+    res.status(500).json({error:"Database error"})
+  }
+})
+
 const PORT = 4000
 app.listen(PORT, () => {
   console.log(`API running on http://localhost:${PORT}`)
