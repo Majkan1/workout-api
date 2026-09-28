@@ -22,8 +22,8 @@ node server.js
 - `POST /workouts` — create a workout
 - `PUT /workouts/:id` — rename a workout
 - `DELETE /workouts/:id` — delete a workout
-- `GET /workouts/:id/exercises` — exercises for a workout (JOIN)
-- `GET /stats` — per-workout aggregates (GROUP BY)
+- `GET /workouts/:id/exercises` — exercises for a workout (JOIN) *(planned)*
+- `GET /stats` — per-workout aggregates (GROUP BY) *(planned)*
 
 ## Notes
 
